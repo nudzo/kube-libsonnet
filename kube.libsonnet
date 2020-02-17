@@ -578,7 +578,7 @@
 
   CustomResourceDefinition(group, version, kind): {
     local this = self,
-    apiVersion: 'apiextensions.k8s.io/v1beta1',
+    apiVersion: 'apiextensions.k8s.io/v1',
     kind: 'CustomResourceDefinition',
     metadata+: {
       name: this.spec.names.plural + '.' + this.spec.group,
@@ -619,7 +619,7 @@
     apiGroup: 'rbac.authorization.k8s.io',
   },
 
-  RoleBinding(name): $._Object('rbac.authorization.k8s.io/v1beta1', 'RoleBinding', name) {
+  RoleBinding(name): $._Object('rbac.authorization.k8s.io/v1', 'RoleBinding', name) {
     local rb = self,
 
     subjects_:: [],
